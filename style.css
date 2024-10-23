@@ -8,6 +8,8 @@
     --grey-dark: rgb(32, 32, 32);
     --black:     #000;
     --backgroud: radial-gradient(circle, var(--grey-dark), var(--black));
+    --backgroud-button: radial-gradient(circle, #0A4144, #27e1e4);
+    --font-hover: #27e1e4;
     --ice-white: rgb(221,217,206);
 }
 
@@ -19,17 +21,24 @@ body{
 }
 
 .main-container{
-    padding: 200px;
+    padding: 100px;
 }
 
 .header-section{
+    background-color: var(--grey-dark);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    height: 10vh;
+    border-radius: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+
 }
 
 .weather-widget {
-    width: 250px;
+    width: 160px;
     height: 50px;
     padding: 10px;
     color: white;
@@ -58,4 +67,36 @@ body{
     letter-spacing: 2px;
     color: var(--ice-white);
     font-family: Arial, sans-serif;
+}
+
+#task-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--grey-dark);
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+#input-task{
+    width: 60%;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+#add-task-button{
+    margin-left: 20px;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    font-size: 15px;
+}
+
+#add-task-button:hover{
+    background-color: var(--backgroud-button);
+    color: var(--font-hover);
 }
