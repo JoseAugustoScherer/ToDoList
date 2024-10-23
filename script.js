@@ -73,7 +73,7 @@ function atualizarWidget(data) {
     
     const weatherIconsDay = {
       "Ensolarado": "Assets/Wheater/none_day.svg",
-      "Nublado": "Assets/Wheater/cloud.svg",
+      "Tempo nublado": "Assets/Wheater/cloud.svg",
       "Parcialmente nublado": "Assets/Wheater/cloudly_day.svg",
       "Chuva": "Assets/Wheater/rain.svg",
       "Tempestade": "Assets/Wheater/storm.svg",
@@ -81,11 +81,11 @@ function atualizarWidget(data) {
 
     const weatherIconsNight = {
         "Ensolarado": "Assets/Wheater/none_night.svg",
-        "Nublado": "Assets/Wheater/cloud.svg",
+        "Tempo nublado": "Assets/Wheater/cloud.svg",
         "Parcialmente nublado": "Assets/Wheater/cloudly_night.svg",
         "Chuva": "Assets/Wheater/rain.svg",
         "Tempestade": "Assets/Wheater/storm.svg",
-    }
+    };
   
     const now     = new Date();
     const day     = now.getDate();
@@ -94,21 +94,24 @@ function atualizarWidget(data) {
 
     document.getElementById( 'current-date' ).innerText = `${day}/${month}/${year}`;
     
+    let hours = now.getHours();
+
     // Função para atualizar o horário
+
     function updateHours() {
-        const now = new Date(); 
-        const hours = now.getHours().toString().padStart(2, '0');
+        const now     = new Date();
+        hours  = now.getHours().toString().padStart(2, '0');
         const minutes = now.getMinutes().toString().padStart(2, '0');
         const seconds = now.getSeconds().toString().padStart(2, '0');
 
-        document.getElementById('hours').innerText = `${hours}:${minutes}:${seconds}`;
+        document.getElementById('hours').innerText = `${hours}h${minutes}m${seconds}s`;
     }
 
     updateHours();
     setInterval(updateHours, 1000);
 
     // Verifica o horário para definir corretamente as imagens
-    if( hours >= 6 && hours < 18 ){
+    if( (hours >= 6 && hours < 18) ){
         const iconSrc = weatherIconsDay[data.description] || "imagens/default.png";
         document.getElementById('weather-icon').src = iconSrc;
     } else {
@@ -116,3 +119,5 @@ function atualizarWidget(data) {
         document.getElementById('weather-icon').src = iconSrc;
     }
 }
+
+// Adicionar tarefas

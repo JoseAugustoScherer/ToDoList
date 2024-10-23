@@ -9,7 +9,7 @@
     --black:     #000;
     --backgroud: radial-gradient(circle, var(--grey-dark), var(--black));
     --backgroud-button: radial-gradient(circle, #0A4144, #27e1e4);
-    --font-hover: #27e1e4;
+    --font-hover: #FFAC00;
     --ice-white: rgb(221,217,206);
 }
 
