@@ -23,6 +23,7 @@ body{
 }
 
 .header-section{
+    border: 1px solid red;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,6 +46,14 @@ body{
 }
 
 #current-date{
+    font-size: 25px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    color: var(--ice-white);
+    font-family: Arial, sans-serif;
+}
+
+#hours{
     font-size: 25px;
     line-height: 20px;
     letter-spacing: 2px;

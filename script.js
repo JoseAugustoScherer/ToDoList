@@ -2,7 +2,6 @@
 const API_KEY = 'e35a06b6';
 const BASE_URL = `https://api.hgbrasil.com/weather?format=json-cors&key=${API_KEY}`;
 
-// Exibe uma mensagem enquanto o clima é carregado
 document.getElementById('city-name').innerText = 'Carregando...';
 
 /* Função para buscar o clima por cidade */
@@ -67,7 +66,6 @@ iniciarGeolocalizacao();
 
 
 /* Adiciona imagens na descrição do clima */
-
 function atualizarWidget(data) {
     document.getElementById('city-name').innerText = data.city;
     document.getElementById('temperature').innerText = `Temperatura: ${data.temp}°C`;
@@ -89,23 +87,32 @@ function atualizarWidget(data) {
         "Tempestade": "Assets/Wheater/storm.svg",
     }
   
-    // Define a imagem com base na descrição
-    const now   = new Date();
-    const hours = now.getHours();
-    //const minutes = now.getMinutes();
-    //const seconds = now.getSeconds();
-    const day   = now.getDate();
-    const month = now.getMonth() + 1;
-    const year  = now.getFullYear();
-
+    const now     = new Date();
+    const day     = now.getDate();
+    const month   = now.getMonth() + 1;
+    const year    = now.getFullYear();
 
     document.getElementById( 'current-date' ).innerText = `${day}/${month}/${year}`;
+    
+    // Função para atualizar o horário
+    function updateHours() {
+        const now = new Date(); 
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
 
+        document.getElementById('hours').innerText = `${hours}:${minutes}:${seconds}`;
+    }
+
+    updateHours();
+    setInterval(updateHours, 1000);
+
+    // Verifica o horário para definir corretamente as imagens
     if( hours >= 6 && hours < 18 ){
-        const iconSrc = weatherIconsDay[data.description] || "imagens/default.png"; // imagem padrão se não houver correspondência
+        const iconSrc = weatherIconsDay[data.description] || "imagens/default.png";
         document.getElementById('weather-icon').src = iconSrc;
     } else {
-        const iconSrc = weatherIconsNight[data.description] || "imagens/default.png"; // imagem padrão se não houver correspondência
+        const iconSrc = weatherIconsNight[data.description] || "imagens/default.png";
         document.getElementById('weather-icon').src = iconSrc;
     }
-  }
+}
