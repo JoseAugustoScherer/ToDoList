@@ -117,13 +117,42 @@ setInterval(updateHours, 1000);
 
 const inputTaskText = document.getElementById( 'input-task' );
 const addTaskButton = document.getElementById( 'add-task-button' );
+const taskList      = document.querySelector ( '.list-task' ); 
 
-function getInpuTaskText (){
+let taskArray = []
+
+function insertTask (){
   if ( inputTaskText.value === '' ) {
+
     alert( 'Por vafor, informe uma tarefa!' );
-    return;
+
+  } else {
+
+    taskArray.push( inputTaskText.value );
+    showTask();
+     
   }
 }
 
-addTaskButton.addEventListener( 'click', getInpuTaskText );
+function showTask (){
 
+  let newTableLine = '';
+
+  taskArray.forEach( ( task ) => {
+
+    newTableLine = newTableLine + `
+    <li class="task">
+      <img class="unchecked" src="Assets/unchecked.svg">
+      <p class="task-content"> ${task} </p>
+      <img class="trashcan" src="Assets/black-trashcan.svg">
+    </li>
+    `
+
+  });
+
+  taskList.innerHTML = newTableLine;
+
+  document.getElementById('input-task').value = '';
+}
+
+addTaskButton.addEventListener( 'click', insertTask );
