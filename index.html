@@ -15,25 +15,29 @@
                     <h3 id="city-name">Cidade</h3>
                     <p id="temperature">Temperatura: --°C</p>
                     <p id="description" style="visibility: hidden; display: none;"></p>
-                    <img id="weather-icon" src="" alt="Ícone do clima" style="width: 50px; height: 50px;">
+                    <img id="weather-icon" src="Assets/Wheater/erro-na-nuvem.png" alt="Ícone do clima" style="width: 50px; height: 50px;">
                 </div>
                 <div id="current-date"></div>
                 <div id="hours"></div>
             </header>
             <div id="task-section">
-                <input  id="input-task" type="text" placeholder="Hoje devo fazer...">
-                <button id="add-task-button" title="Adicionar Tarefa">Adicionar</button>
-            </div>
-            <template>
-                <div>
-                    <input  type="checkbox" id="checkbox" class="checkbox" title="Mark it Done!">
-                    <input  type="text"     id="task"     class="task-added">
-                    <button type="button"   id="edit-task-button">
-                    </button>
-                    <button type="button"   id="delete-task-button">
-                    </button>
+                <div id="task-child">
+                    <input  id="input-task" type="text" placeholder="Hoje devo fazer...">
+                    <button id="add-task-button" title="Adicionar Tarefa">Adicionar</button>
+                    <img    id="arrow" src="Assets/arrow.png" style="visibility: hidden;" >
+                    <div class="list-section">
+
+                        <ul class="list-task">
+                            <li class="task">
+                                <img class="unchecked" src="Assets/unchecked.svg">
+                                <div class="task-content"></div>
+                                <img class="trashcan" src="Assets/black-trashcan.svg">
+                            </li>
+                        </ul>
+
+                    </div>
                 </div>
-            </template>
+            </div>
         </div>
     </section>
     <script src="script.js" ></script>

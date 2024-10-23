@@ -1,5 +1,5 @@
 * {
-    margin:  0px;
+    margin:  0 auto;
     padding: 0px;
     box-sizing: border-box;
 }
@@ -11,6 +11,7 @@
     --backgroud-button: radial-gradient(circle, #0A4144, #27e1e4);
     --font-hover: #FFAC00;
     --ice-white: rgb(221,217,206);
+    --baby-blue: #60B0ED;
 }
 
 body{
@@ -70,33 +71,101 @@ body{
 }
 
 #task-section{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     background-color: var(--grey-dark);
     margin-top: 20px;
-    padding: 10px;
+    padding: 40px;
     border-radius: 30px;
 }
 
 #input-task{
-    width: 60%;
+    border: none;
+    outline: none;
+    width: 70%;
     height: 40px;
     font-size: 20px;
     border-radius: 30px;
     text-align: center;
+    background-color: var(--ice-white);
 }
+
 
 #add-task-button{
     margin-left: 20px;
     cursor: pointer;
-    width: 100px;
+    width: 120px;
     height: 40px;
     border-radius: 30px;
-    font-size: 15px;
+    font-size: 20px;
+    float: right;
+    background-color: var(--ice-white);
+}
+
+#arrow{
+    position: absolute;
+    right: 150px;
+    top: 285px;
 }
 
 #add-task-button:hover{
     background-color: var(--backgroud-button);
     color: var(--font-hover);
+}
+
+#add-task-button:active{
+    color: var(--baby-blue);
+}
+
+.list-section{
+    padding-top: 40px;
+}
+
+.list-task{
+    width: 100%;
+    list-style: none;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    background-color: var(--ice-white);
+    border-radius: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 25px
+}
+
+.unchecked,.trashcan{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.unchecked:hover{
+    background-image: url('Assets/checked.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.trashcan:hover{
+    
+    background-color: tomato;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.task:hover img{
+    opacity: 1;
+    transition: 1s;
+}
+
+.task-content{
+    width: 80%;
+    text-align: center;
 }
