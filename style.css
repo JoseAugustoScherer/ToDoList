@@ -12,6 +12,7 @@
     --font-hover: #FFAC00;
     --ice-white: rgb(221,217,206);
     --baby-blue: #60B0ED;
+    --light-green: #8fac55;
 }
 
 body{
@@ -112,7 +113,7 @@ body{
 }
 
 #add-task-button:active{
-    color: var(--baby-blue);
+    color: var(--light-green);
 }
 
 .list-section{
@@ -134,7 +135,8 @@ body{
     padding-left: 15px;
     padding-right: 15px;
     font-family: Arial, sans-serif;
-    font-size: 25px
+    font-size: 25px;
+    margin-top: 10px;
 }
 
 .unchecked,.trashcan{
@@ -144,21 +146,18 @@ body{
     opacity: 0;
 }
 
-.unchecked:hover{
-    background-image: url('Assets/checked.svg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.completed{
+    background-color: var(--light-green);
+    text-decoration: line-through;
 }
+
 .trashcan:hover{
-    
     background-color: tomato;
     border-radius: 10px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 
 .task:hover img{
     opacity: 1;

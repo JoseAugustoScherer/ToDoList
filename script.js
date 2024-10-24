@@ -122,13 +122,19 @@ const taskList      = document.querySelector ( '.list-task' );
 let taskArray = []
 
 function insertTask (){
-  if ( inputTaskText.value === '' ) {
+  const taskContent = inputTaskText.value.trim();
 
-    alert( 'Por vafor, informe uma tarefa!' );
+  if ( taskContent === '' ) {
+
+    alert( 'Por favor, informe uma tarefa!' );
 
   } else {
 
-    taskArray.push( inputTaskText.value );
+    taskArray.push( {
+      task      : taskContent,
+      completed : false
+    });
+
     showTask();
      
   }
@@ -138,21 +144,59 @@ function showTask (){
 
   let newTableLine = '';
 
-  taskArray.forEach( ( task ) => {
+  taskArray.forEach( ( task, index ) => {
 
     newTableLine = newTableLine + `
-    <li class="task">
-      <img class="unchecked" src="Assets/unchecked.svg">
-      <p class="task-content"> ${task} </p>
-      <img class="trashcan" src="Assets/black-trashcan.svg">
+    <li class="task ${task.completed && "completed"}" >
+      <img class="unchecked" src="Assets/unchecked.svg" onclick="completeTask( ${index} )">
+      <p class="task-content"> ${task.task} </p>
+      <img class="trashcan" src="Assets/black-trashcan.svg" onclick="deleteTask( ${index} )">
     </li>
     `
-
   });
 
   taskList.innerHTML = newTableLine;
 
-  document.getElementById('input-task').value = '';
+  localStorage.setItem( 'listOfTask', JSON.stringify( taskArray ));
+
+  document.getElementById( 'input-task' ).value = '';
 }
 
 addTaskButton.addEventListener( 'click', insertTask );
+inputTaskText.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    insertTask();
+  }
+});
+
+// Delete task
+
+function deleteTask ( index ){
+  taskArray.splice( index, 1 );
+  showTask();
+}
+
+// Complete Task
+
+const taskCompleted = document.querySelector( '.list-task' );
+
+function completeTask ( index ){
+  taskArray[ index ].completed = !taskArray[ index ].completed;
+  showTask();
+}
+
+// Reaload items
+
+function reloadItems (){
+  
+  const localStorageItems = localStorage.getItem( 'listOfTask' );
+
+  if (localStorageItems) {
+    taskArray = JSON.parse( localStorageItems );
+  }
+  
+  showTask();
+
+}
+
+reloadItems();
