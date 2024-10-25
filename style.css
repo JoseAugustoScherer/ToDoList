@@ -31,7 +31,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 870px;
     height: 10vh;
     border-radius: 30px;
     padding-left: 20px;
@@ -72,6 +72,7 @@ body{
 }
 
 #task-section{
+    width: 870px;
     background-color: var(--grey-dark);
     margin-top: 20px;
     padding: 40px;

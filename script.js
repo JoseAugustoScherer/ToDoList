@@ -65,19 +65,21 @@ function atualizarWidget(data) {
     document.getElementById( 'description' ).innerText = `Descrição: ${data.description}`;
      
     const weatherIconsDay = {
-      "Ensolarado":           "Assets/Wheater/none_day.svg",
-      "Tempo nublado":        "Assets/Wheater/cloud.svg",
-      "Parcialmente nublado": "Assets/Wheater/cloudly_day.svg",
-      "Chuva":                "Assets/Wheater/rain.svg",
-      "Tempestade":           "Assets/Wheater/storm.svg",
+      "Ensolarado"           : "Assets/Wheater/none_day.svg",
+      "Tempo nublado"        : "Assets/Wheater/cloud.svg",
+      "Parcialmente nublado" : "Assets/Wheater/cloudly_day.svg",
+      "Chuva"                : "Assets/Wheater/rain.svg",
+      "Tempestade"           : "Assets/Wheater/storm.svg",
+      "Tempo limpo"          : "Assets/Wheater/none_day.svg",
     };
 
     const weatherIconsNight = {
-        "Ensolarado":           "Assets/Wheater/none_night.svg",
-        "Tempo nublado":        "Assets/Wheater/cloud.svg",
-        "Parcialmente nublado": "Assets/Wheater/cloudly_night.svg",
-        "Chuva":                "Assets/Wheater/rain.svg",
-        "Tempestade":           "Assets/Wheater/storm.svg",
+        "Ensolarado"           : "Assets/Wheater/none_night.svg",
+        "Tempo nublado"        : "Assets/Wheater/cloud.svg",
+        "Parcialmente nublado" : "Assets/Wheater/cloudly_night.svg",
+        "Chuva"                : "Assets/Wheater/rain.svg",
+        "Tempestade"           : "Assets/Wheater/storm.svg",
+        "Tempo limpo"          : "Assets/Wheater/none_night.svg",
     };
 
     // Verifica o horário para definir corretamente as imagens
