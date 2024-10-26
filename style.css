@@ -36,7 +36,6 @@ body{
     border-radius: 30px;
     padding-left: 20px;
     padding-right: 20px;
-
 }
 
 .weather-widget {
@@ -168,4 +167,153 @@ body{
 .task-content{
     width: 80%;
     text-align: center;
+}
+
+footer{
+    margin: 0px auto;
+    width: 100%;
+    position: absolute;
+    bottom: 5px;
+    color: var(--ice-white);
+    text-align: center;
+}
+
+footer div{
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    gap: 40px;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--ice-white);
+}
+
+
+@media (max-width: 480px) {
+    .main-container {
+        padding: 20px;
+    }
+
+    .header-section {
+        width: 100%;
+        height: 15vh;
+        border-radius: 15px;
+        padding-bottom: 10px;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    #task-section {
+        width: 100%;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    #input-task {
+        width: 100%;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    #add-task-button {
+        width: 100%;
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+
+    .task {
+        font-size: 20px;
+    }
+
+    .unchecked, .trashcan {
+        width: 20px;
+        height: 20px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+/* RESPONSIVIDADE */
+
+@media (min-width: 375px) and (max-width: 667px){
+    .header-section {
+        width: 90%;
+        height: 20vh;
+        border-radius: 15px;
+        padding-bottom: 10px;
+        
+        display: flex;
+        flex-direction: column;
+    }
+
+    #task-section {
+        width: 90%;
+    }
+
+    #input-task {
+        font-size: 18px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #add-task-button {
+        font-size: 20px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .task {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .header-section {
+        width: 90%;
+        height: 15vh;
+        border-radius: 15px;
+        padding-bottom: 10px;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    #task-section {
+        width: 90%;
+    }
+
+    #input-task {
+        font-size: 18px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #add-task-button {
+        font-size: 20px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .task {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header-section {
+        width: 80%;
+    }
+
+    #task-section {
+        width: 80%;
+    }
+
+    .task {
+        font-size: 24px;
+    }
 }
