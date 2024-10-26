@@ -112,10 +112,6 @@ body{
     color: var(--font-hover);
 }
 
-#add-task-button:active{
-    color: var(--light-green);
-}
-
 .list-section{
     padding-top: 40px;
 }
@@ -172,7 +168,7 @@ body{
 footer{
     margin: 0px auto;
     width: 100%;
-    position: absolute;
+    position: relative;
     bottom: 5px;
     color: var(--ice-white);
     text-align: center;
@@ -267,6 +263,15 @@ footer a{
         margin-bottom: 40px;
     }
 
+    #add-task-button:active{
+        background-color: var(--backgroud-button);
+        color: var(--font-hover);
+    }
+
+    #add-task-button:focus {
+        outline: none;
+    }
+
     .task {
         font-size: 22px;
     }
@@ -297,6 +302,7 @@ footer a{
         font-size: 20px;
         width: 100%;
         margin-bottom: 40px;
+        transform: translateY(2px);
     }
 
     .task {
