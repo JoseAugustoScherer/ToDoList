@@ -236,6 +236,54 @@ footer a{
 
 /* RESPONSIVIDADE */
 
+@media (min-width: 360px) and (max-width: 740px){
+    .header-section {
+        width: 90%;
+        height: 20vh;
+        border-radius: 15px;
+        padding-bottom: 10px;
+        
+        display: flex;
+        flex-direction: column;
+    }
+
+    #task-section {
+        width: 90%;
+    }
+
+    #input-task {
+        font-size: 18px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #add-task-button {
+        font-size: 20px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    #add-task-button:active{
+        background-color: var(--backgroud-button);
+        color: var(--font-hover);
+    }
+
+    #add-task-button:focus {
+        outline: none;
+    }
+
+    .task {
+        font-size: 22px;
+    }
+
+    footer{
+        padding-right: 8px;
+        padding-left: 8px;
+        font-size: 10px;
+    }
+}
+
+
 @media (min-width: 375px) and (max-width: 667px){
     .header-section {
         width: 90%;
